@@ -34,6 +34,8 @@ export default function Weather(props) {
         });
     }
   }, [props.zipCode]);
+
+  
   return (
     <ImageBackground source={require("../bg.jpg")} style={styles.backdrop}>
       <View style={styles.background}></View>
@@ -63,8 +65,8 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     position: "absolute",
     opacity: 0.55,
-    width: "80%",
-    height: "60%",
+    width: "90%",
+    height: "75%",
     
   },
 });

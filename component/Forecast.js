@@ -1,19 +1,28 @@
 import React from "react";
-import { View, Text, StyleSheet, ImageBackground } from "react-native";
+import { View, Text, StyleSheet, ImageBackground, Image } from "react-native";
 
 export default function Forecast(props) {
-  // let x = "";
-  // if (props.name == "Hat Yai") {
-  //   x = require("../lena.jpg");
-  // }
-  // if (props.name == "Trang") {
-  //   x = require("../bg.jpg");
-  // }
+
+  let img = "";
+  if (props.name == "Hat Yai") {
+    img = require("../image/hatyai.jpg");
+  }
+  if (props.name == "Trang") {
+    img = require("../image/trang.jpg");
+  }
+  if (props.name == "Chiang Mai") {
+    img = require("../image/chiangmai.jpg");
+  }
+  if (props.name == "Khon Kaen") {
+    img = require("../image/khonkaen.jpg");
+  }
+  if (props.name == "Chaophraya Surasak") {
+    img = require("../image/chonburi.jpg");
+  }
 
   return (
     // <ImageBackground source={x} style={styles.backdrop}>
     <View>
-      {/* <ImageBackground source={x}style={styles.backdrop}></ImageBackground> */}
       <Text style={styles.mainText}>{props.main}</Text>
       <Text style={styles.descriptionText}>{props.description}</Text>
       <Text style={styles.detailText}>
@@ -28,20 +37,22 @@ export default function Forecast(props) {
       >
         <Text style={styles.tempText}>Tempurature : {props.temp}°C</Text>
       </View>
-      <Text style={styles.feellikeText}>Feel Like : {props.feels_like}°C</Text>
+      <Text style={styles.feellikeText}>Feel Like : {props.feels_like}°C{"\n"}</Text>
+      <View>
+        <Image source={img} style={styles.img}></Image>
+      </View>
     </View>
     // </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  backdrop: {
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-    width: "100%",
-    height: "100%",
+
+  img: {
+    width: 320,
+    height: 150,
   },
+
   mainText: {
     fontSize: 30,
     color: "black",
