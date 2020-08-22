@@ -16,10 +16,20 @@ export default function Forecast(props) {
   if (props.name == "Khon Kaen") {
     img = require("../image/khonkaen.jpg");
   }
+
   if (props.name == "Chaophraya Surasak") {
     img = require("../image/chonburi.jpg");
   }
-
+  if (props.name == "Surat Thani") {
+    img = require("../image/SuratThani.jpg");
+  }
+  if (props.name == "Nakhon Pathom") {
+    img = require("../image/NakhonPathom.jpg");
+  }
+  if (props.name == "Bangkok") {
+    img = require("../image/Bangkok.jpg");
+  }
+  
   return (
     // <ImageBackground source={x} style={styles.backdrop}>
     <View>

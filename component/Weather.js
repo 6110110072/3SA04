@@ -41,6 +41,7 @@ export default function Weather(props) {
       <View style={styles.background}></View>
       <Text style={styles.Text}>Zip code is {props.zipCode}</Text>
       <Forecast {...forecastInfo} />
+      
     </ImageBackground>
   );
 }
