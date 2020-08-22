@@ -14,5 +14,6 @@ export default function Forecast(props) {
 const styles = StyleSheet.create({
   textsize: {
     fontSize : 30,
+    
   }
 });
