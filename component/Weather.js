@@ -54,20 +54,22 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   Text: {
-    paddingTop: 20,
+    
+    paddingTop: 50,
     fontSize: 20,
     color: "black",
     textAlign: "center",
   },
   background: {
+    top:40,
     flexDirection:'column',
     justifyContent:'center',
     alignItems:'center',
     backgroundColor: "white",
     position: "absolute",
-    opacity: 0.55,
+    opacity: 0.35,
     width: "90%",
-    height: "75%",
+    height: "90%",
     
   },
 });

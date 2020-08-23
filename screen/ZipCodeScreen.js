@@ -89,8 +89,5 @@ const styles = StyleSheet.create({
   zipCode: {
     flex: 1,
   },
-  Button: {
-    margin: 20,
-    color:'black',
-  },
+  
 });

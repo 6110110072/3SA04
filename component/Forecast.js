@@ -39,26 +39,21 @@ export default function Forecast(props) {
   return (
     // <ImageBackground source={x} style={styles.backdrop}>
     <View>
+      <Text style={styles.mainText}>{props.name}</Text>
+      <View>
+        <Image source={img} style={styles.img}></Image>
+      </View>
       <Text style={styles.mainText}>{props.main}</Text>
       <Text style={styles.descriptionText}>{props.description}</Text>
       <Text style={styles.detailText}>
         pressure : {props.pressure} pascal {"    "} Huminity : {props.humidity}{" "}
         %
       </Text>
-      <View
-        style={{
-          flexDirection: "row",
-          padding: 10,
-        }}
-      >
-        <Text style={styles.tempText}>Tempurature : {props.temp}°C</Text>
-      </View>
+  <Text style={styles.tempText}>{"\n"}Tempurature : {props.temp}°C</Text>
       <Text style={styles.feellikeText}>
         Feel Like : {props.feels_like}°C{"\n"}
       </Text>
-      <View>
-        <Image source={img} style={styles.img}></Image>
-      </View>
+      
     </View>
     // </ImageBackground>
   );
@@ -66,6 +61,7 @@ export default function Forecast(props) {
 
 const styles = StyleSheet.create({
   img: {
+    top: 15,
     width: 320,
     height: 150,
   },
