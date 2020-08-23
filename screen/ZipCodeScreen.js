@@ -5,6 +5,8 @@ import {
   Text,
   StyleSheet,
   ImageBackground,
+  Button,
+  Linking,
 } from "react-native";
 import { TouchableHighlight } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
@@ -34,21 +36,35 @@ const ZipItem = ({ place, code, navigation, pic }) => (
     onPress={() => navigation.navigate("Weather", { zipCode: code })}
   >
     <View style={styles.layout}>
-<ImageBackground source={pic} style={styles.backdrop}></ImageBackground>
-      <Text style={{ textAlign: "center",}}>{place}</Text>
-      <Text style={{ textAlign: "center",}}>{code}</Text>
-      
+      <ImageBackground source={pic} style={styles.backdrop}></ImageBackground>
+      <Text style={{ textAlign: "center", backgroundColor: "#FFE099" }}>
+        {place}
+      </Text>
+      <Text style={{ textAlign: "center", backgroundColor: "#FFEABC" }}>
+        {code}
+      </Text>
+      <Text style={{ backgroundColor: "#FFF6E1" }}>{"\n"}</Text>
     </View>
   </TouchableHighlight>
 );
 export default function zipCodeScreen() {
   const navigation = useNavigation();
   return (
-    <FlatList
-      data={availableZipItems}
-      keyExtractor={(item) => item.code}
-      renderItem={({ item }) => <ZipItem {...item} navigation={navigation} />}
-    />
+    <View>
+      <Button
+        style={styles.Button}
+        title="See all Weather in Website"
+        color="black"
+        onPress={() => Linking.openURL("https://weather.com/weather/today/l/7.00,100.48?par=google&temp=c")}
+      ></Button>
+
+      <FlatList
+        data={availableZipItems}
+        keyExtractor={(item) => item.code}
+        renderItem={({ item }) => <ZipItem {...item} navigation={navigation} />}
+      />
+      
+    </View>
   );
 }
 
@@ -72,5 +88,9 @@ const styles = StyleSheet.create({
   },
   zipCode: {
     flex: 1,
+  },
+  Button: {
+    margin: 20,
+    color:'black',
   },
 });

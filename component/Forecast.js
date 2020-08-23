@@ -1,8 +1,14 @@
 import React from "react";
-import { View, Text, StyleSheet, ImageBackground, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  Image,
+  Button,
+} from "react-native";
 
 export default function Forecast(props) {
-
   let img = "";
   if (props.name == "Hat Yai") {
     img = require("../image/hatyai.jpg");
@@ -29,7 +35,7 @@ export default function Forecast(props) {
   if (props.name == "Bangkok") {
     img = require("../image/Bangkok.jpg");
   }
-  
+
   return (
     // <ImageBackground source={x} style={styles.backdrop}>
     <View>
@@ -47,7 +53,9 @@ export default function Forecast(props) {
       >
         <Text style={styles.tempText}>Tempurature : {props.temp}°C</Text>
       </View>
-      <Text style={styles.feellikeText}>Feel Like : {props.feels_like}°C{"\n"}</Text>
+      <Text style={styles.feellikeText}>
+        Feel Like : {props.feels_like}°C{"\n"}
+      </Text>
       <View>
         <Image source={img} style={styles.img}></Image>
       </View>
@@ -57,7 +65,6 @@ export default function Forecast(props) {
 }
 
 const styles = StyleSheet.create({
-
   img: {
     width: 320,
     height: 150,
